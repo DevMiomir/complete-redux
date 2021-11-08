@@ -1,15 +1,15 @@
-
 const initalState = {
-    count: 0
-}
+  count: 0,
+};
 
-export default function Reducer(state = initalState, action){
-   switch(action.type) {
-       case 'INCREMENT': 
-        return { count: state.count + 1 };
-       case 'DECREMENT':
-           return { count: state.count - 1 };
-        default:
-            return state   
-   }
+export default function Reducer(state = initalState, action) {
+  console.log(action);
+  switch (action.type) {
+    case 'INCREMENT':
+      return { count: state.count + action.payload };
+    case 'DECREMENT':
+      return { count: state.count - action.payload };
+    default:
+      return state;
+  }
 }
